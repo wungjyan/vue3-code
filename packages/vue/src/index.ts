@@ -1,3 +1,1 @@
-import { fn } from '@vue/reactivity'
-
-fn('hello')
+export { reactive, effect } from '@vue/reactivity'

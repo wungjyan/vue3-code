@@ -1,3 +1,2 @@
-export const fn = a => {
-  console.log(a)
-}
+export { reactive } from './reactive'
+export { effect } from './effect'
