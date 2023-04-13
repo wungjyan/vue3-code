@@ -18,7 +18,7 @@ export function effect<T = any>(fn: () => T) {
 }
 
 // 当前激活的 effect
-let activeEffect: ReactiveEffect | undefined
+export let activeEffect: ReactiveEffect | undefined
 
 export class ReactiveEffect<T = any> {
   constructor(public fn: () => T) {}
@@ -72,7 +72,7 @@ export function trigger(target: object, key: unknown, newValue: unknown) {
   // effect.fn()
 }
 
-function triggerEffects(dep: Dep) {
+export function triggerEffects(dep: Dep) {
   const effects = Array.isArray(dep) ? dep : [...dep]
   for (const effect of effects) {
     effect.fn()
